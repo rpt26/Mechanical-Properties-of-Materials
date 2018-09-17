@@ -1,0 +1,87 @@
+%% The openany option is here just to remove the blank pages before a new chapter
+\documentclass[a4paper]{article}
+
+
+\usepackage{mystyle}
+\addbibresource{refs.bib}
+
+
+\usepackage{etoolbox}
+
+\newtoggle{supervisor}
+\toggletrue{supervisor}
+
+
+
+
+
+\graphicspath{{figs/}}
+
+\title{Mechanical Properties of Materials}
+\pagenumbering{gobble}
+\renewcommand{\familydefault}{\sfdefault}
+\iftoggle{supervisor}{\newenvironment{annotation}{\color{red}}{}}{\newenvironment{annotation}{}{}}
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+{\centering
+{\Huge
+IB Course B\\
+Mechanical Properties of Materials\\}
+\vspace{1cm}
+{\LARGE
+R.P. Thompson\\}
+
+\vspace{3cm}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{crushed}
+\end{figure}
+}
+
+\clearpage
+
+
+\onehalfspacing
+\section*{Introduction}
+
+The mechanical behaviour of properties is one of the central themes of the subject. The properties that govern this behaviour are of direct interest for structural applications, indeed structural materials make up the vast majority of material use globally.
+
+But even for materials that are used for their functional properties mechanical properties are important. The failure mode of many devices is mechanical in nature. Hence, regardless of the primary purpose of a material it is important that we understand the way that loading of structures leads to stresses and strains in a material, how to represent these quantities and the possible modes of failure that might arise as a result.
+
+Building on Course E of IA, the course begins with the representation of stress and strain as tensors. The course will cover how structures can be loaded, particularly beams and struts. The last part of the course will develop the failure modes of materials, including fracture, fatigue, crushing, buckling and yielding.
+
+
+
+
+
+\clearpage
+
+\tableofcontents
+
+\clearpage
+\pagenumbering{arabic}
+
+
+\input{tensors}
+
+\input{structures.tex}
+
+\input{plasticity.tex}
+
+\input{failure.tex}
+
+
+\FloatBarrier
+\clearpage
+\printbibliography
+
+\end{document}
